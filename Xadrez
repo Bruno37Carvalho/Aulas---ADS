@@ -1,1 +1,46 @@
+#include <stdio.h>
 
+int main() {
+    // Constantes de movimentação
+    const int BISPO_PASSOS = 5;
+    const int TORRE_PASSOS = 5;
+    const int RAINHA_PASSOS = 8;
+
+    // BISPO – 5 casas na diagonal superior direita (usando while)
+    int i = 1;
+    printf("Movimento do Bispo (diagonal superior direita):\n");
+    while (i <= BISPO_PASSOS) {
+        printf("Cima + Direita (%d)\n", i);
+        i++;
+    }
+    printf("\n");
+
+    // TORRE – 5 casas para a direita (usando for)
+    printf("Movimento da Torre (direita):\n");
+    for (i = 1; i <= TORRE_PASSOS; i++) {
+        printf("Direita (%d)\n", i);
+    }
+    printf("\n");
+
+    // RAINHA – 8 casas para a esquerda (usando do-while)
+    i = 1;
+    printf("Movimento da Rainha (esquerda):\n");
+    do {
+        printf("Esquerda (%d)\n", i);
+        i++;
+    } while (i <= RAINHA_PASSOS);
+    printf("\n");
+
+    // CAVALO – movimento em L para baixo e esquerda (usando loops aninhados)
+    printf("Movimento do Cavalo (L - baixo e esquerda):\n");
+    for (int baixo = 1; baixo <= 2; baixo++) { // 2 passos para baixo
+        printf("Baixo (%d)\n", baixo);
+        int esquerda = 1;
+        while (esquerda <= 1) { // 1 passo para esquerda
+            printf("Esquerda (%d)\n", esquerda);
+            esquerda++;
+        }
+    }
+
+    return 0;
+}
