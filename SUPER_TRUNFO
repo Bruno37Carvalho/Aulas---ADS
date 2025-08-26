@@ -1,0 +1,86 @@
+//biblioteca
+#include <stdio.h>
+#include <stdlib.h>
+
+//inicio do código
+int main() {
+    int comecar, populacao1, populacao2, turisticos1, turisticos2;
+    float area1, area2, PIB1, PIB2;
+    char cidade1[30], cidade2[30], tipo1, tipo2, estado1[3], estado2[3];
+
+    //apresentação do TRUNFO
+    printf("Bem vindo ao BRASIL TRUNFO!!!\n");
+    printf("Vamos comecar? (1 = SIM / 2 = NAO): ");
+    scanf("%d", &comecar);
+    getchar();
+
+    if(comecar == 2){
+        printf("---ACABOU---\n");
+        return 0;
+    }
+
+    //1ª carta
+    printf("1ª CARTA:\n");
+    printf("Estado (sigla): ");
+    fgets(estado1, 3, stdin);
+    printf("Nome da cidade: ");
+    fgets(cidade1, 30, stdin);
+    printf("Classe da carta (A/B/C/D): ");
+    scanf(" %c", &tipo1);
+    printf("Populacao: ");
+    scanf("%d", &populacao1);
+    printf("Area: ");
+    scanf("%f", &area1);
+    printf("PIB do pais em TRILHAO ou MILHAO: ");
+    scanf("%f", &PIB1);
+    printf("Pontos turisticos: ");
+    scanf("%d", &turisticos1);
+    getchar();
+
+    //2ª carta
+    printf("2ª CARTA:\n");
+    printf("Estado (sigla): ");
+    fgets(estado2, 3, stdin);
+    printf("Nome da cidade: ");
+    fgets(cidade2, 30, stdin);
+    printf("Classe da carta (A/B/C/D): ");
+    scanf(" %c", &tipo2);
+    printf("Populacao: ");
+    scanf("%d", &populacao2);
+    printf("Area: ");
+    scanf("%f", &area2);
+    printf("PIB do pais em TRILHAO ou MILHAO: ");
+    scanf("%f", &PIB2);
+    printf("Pontos turisticos: ");
+    scanf("%d", &turisticos2);
+
+    printf("\n---RESULTADOS---\n");
+
+    //comparações e resultados
+    printf("Classe da carta: ");
+    if(tipo1 > tipo2) printf("1ª carta vence\n");
+    else if(tipo1 < tipo2) printf("2ª carta vence\n");
+    else printf("Empate\n");
+
+    printf("Populacao: ");
+    if(populacao1 < populacao2) printf("1ª carta vence\n");
+    else if(populacao1 > populacao2) printf("2ª carta vence\n");
+    else printf("Empate\n");
+
+    printf("Area: ");
+    if(area1 > area2) printf("1ª carta vence\n");
+    else if(area1 < area2) printf("2ª carta vence\n");
+    else printf("Empate\n");
+
+    printf("PIB: ");
+    if(PIB1 > PIB2) printf("1ª carta vence\n");
+    else if(PIB1 < PIB2) printf("2ª carta vence\n");
+    else printf("Empate\n");
+
+    printf("Pontos turisticos: ");
+    if(turisticos1 > turisticos2) printf("1ª carta vence\n");
+    else if(turisticos1 < turisticos2) printf("2ª carta vence\n");
+    else printf("Empate\n");
+
+    return 0;
+}
