@@ -1,0 +1,71 @@
+//BIBLIOTECAS
+#include <stdio.h>
+#include <stdlib.h>
+
+//INÍCIO DO CÓDIGO
+int main(){
+    //ARMAZENANDO CARTA
+    struct Carta{
+        //VARIÁVEIS
+        char codigo[4];
+        int populacao, pontos_turisticos;
+        float area, pib, pib_per_capita, densidade_populacional;
+    };
+    //ARRAYS
+    struct Carta cartas[2];
+
+    // PRIMEIRA CARTA
+    printf("=== Cadastro da Primeira Carta ===\n");
+    printf("Digite o codigo da carta (ex: A01): ");
+    scanf("%3s", cartas[0].codigo);
+    printf("Digite a populacao: ");
+    scanf("%d", &cartas[0].populacao);
+    printf("Digite a area (em km²): ");
+    scanf("%f", &cartas[0].area);
+    printf("Digite o PIB (em bilhoes): ");
+    scanf("%f", &cartas[0].pib);
+    printf("Digite o numero de pontos turisticos: ");
+    scanf("%d", &cartas[0].pontos_turisticos);
+
+    //CALCULO DE ATRIBUTOS CARTA 1
+    cartas[0].densidade_populacional = cartas[0].populacao / cartas[0].area;
+    cartas[0].pib_per_capita = cartas[0].pib / cartas[0].populacao;
+
+    //CADASTRO SEGUNDA CARTA
+    printf("\n=== Cadastro da Segunda Carta ===\n");
+    printf("Digite o codigo da carta (ex: B02): ");
+    scanf("%3s", cartas[1].codigo);
+    printf("Digite a populacao: ");
+    scanf("%d", &cartas[1].populacao);
+    printf("Digite a area (em km²): ");
+    scanf("%f", &cartas[1].area);
+    printf("Digite o PIB (em bilhoes): ");
+    scanf("%f", &cartas[1].pib);
+    printf("Digite o numero de pontos turisticos: ");
+    scanf("%d", &cartas[1].pontos_turisticos);
+
+    //CALCULANDO ATRIBUTOS CARTA 2
+    cartas[1].densidade_populacional = cartas[1].populacao / cartas[1].area;
+    cartas[1].pib_per_capita = cartas[1].pib / cartas[1].populacao;
+
+    //EXIBINDO DADOS CARTAS 1/2
+    printf("\n=== Dados da Primeira Carta ===\n");
+    printf("Codigo: %s\n", cartas[0].codigo);
+    printf("Populacao: %d\n", cartas[0].populacao);
+    printf("Area: %.2f km²\n", cartas[0].area);
+    printf("PIB: %.2f bilhoes\n", cartas[0].pib);
+    printf("Pontos Turisticos: %d\n", cartas[0].pontos_turisticos);
+    printf("Densidade Populacional: %.2f hab/km²\n", cartas[0].densidade_populacional);
+    printf("PIB per Capita: %.2f bilhoes/hab\n", cartas[0].pib_per_capita);
+
+    printf("\n=== Dados da Segunda Carta ===\n");
+    printf("Codigo: %s\n", cartas[1].codigo);
+    printf("Populacao: %d\n", cartas[1].populacao);
+    printf("Area: %.2f km²\n", cartas[1].area);
+    printf("PIB: %.2f bilhoes\n", cartas[1].pib);
+    printf("Pontos Turisticos: %d\n", cartas[1].pontos_turisticos);
+    printf("Densidade Populacional: %.2f hab/km²\n", cartas[1].densidade_populacional);
+    printf("PIB per Capita: %.2f bilhoes/hab\n", cartas[1].pib_per_capita);
+
+    return 0;
+}
